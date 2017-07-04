@@ -7,7 +7,7 @@ export default class Footer extends React.Component {
 		<div>
 			<footer className="footer">
 				<div className="content has-text-centered">
-					<p><strong>Project</strong> by <a href="http://google.ca" target="_blank">Name Name</a>.</p>
+					<p><strong>Project</strong> by <a href="http://google.ca" rel="noopener noreferrer" target="_blank">Name Name</a>.</p>
 				</div>
 			</footer>
 		</div>

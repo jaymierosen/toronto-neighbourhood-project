@@ -12,19 +12,24 @@ export default class App extends Component{
 			items: [] 
 		};
 	}
-	componentDidMount() {
+	componentDidMount(){
 		fetch(`http://jsonplaceholder.typicode.com/posts`)
 		.then(result=>result.json())
 		.then(items=>this.setState({items}))
 	}
+	banana(){
+		this.state.items.forEach(function(item){
+			console.log(item);
+		});
+	}
 	render() {
-		console.log(this.state.items, 'working!');
+		console.log(this.state.items);
 		return(
 			<div className="container is-fluid">
 				<section className="section">
 					<div className="container">
 						<Header />
-						<Map />
+						<Map banana={this.banana.bind(this)} />
 						<div className="columns">
 							<div className="column is-half">
 								<Input />
@@ -36,9 +41,8 @@ export default class App extends Component{
 					</div>
 					<ul>
 						{this.state.items.map(function (item) {
-							console.log(item);
-							// return React.createElement(
-							// "li", { key: item.id }, item.body);
+							return React.createElement(
+							"li", { key: item.id }, item.body);
   						})}
 					</ul>
 					<Footer />
