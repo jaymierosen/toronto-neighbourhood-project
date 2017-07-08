@@ -8,7 +8,7 @@ export default class List extends React.Component {
 		return(
 			<div>
 				<div className="notification is-primary">
-					<p>{this.props.text}</p>
+					{/*<p>{this.props.text}</p>*/}
 					<button className="delete"></button>
 				</div>
 				<div className="notification is-primary">

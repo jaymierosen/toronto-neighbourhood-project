@@ -28,12 +28,6 @@ export default class App extends Component{
 			})
 		})
 	}
-	displayText(items){
-		console.log(items);
-		this.setState({
-			items: 'hello'
-		})
-	}
 	render() {
 		return(
 			<div className="container is-fluid">
@@ -46,7 +40,9 @@ export default class App extends Component{
 								<Input />
 							</div>
 							<div className="column is-half">
-								<List displayText={this.displayText.bind(this)} text={this.state.displayText} />
+								<List  
+									text={this.state.displayText} 
+								/>
 							</div>
 						</div>
 					</div>
