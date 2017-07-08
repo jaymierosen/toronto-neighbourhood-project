@@ -9,29 +9,19 @@ export default class App extends Component{
 	constructor() {
 		super();
 		this.state = { 
-			items: 'hello'
+			items: []
 		};
 	}
 	componentDidMount(){
 		var _this = this;
-		var url = 'http://jsonplaceholder.typicode.com/posts';
-		fetch(url,{
-			method: 'GET'
-		})
-		.then(function(result){
-			result.json()
-			console.log(result.url)
-		})
-		.then(function(data){
-			_this.setState({
-				items: 'hello'
-			})
-		})
+		fetch(`http://jsonplaceholder.typicode.com/posts`)
+		.then(result=>result.json())
+		.then(items=>_this.setState({items}))
 	}
 	displayText(items){
 		console.log(items);
 		this.setState({
-			items: 'hello'
+			items: []
 		})
 	}
 	render() {
@@ -50,6 +40,16 @@ export default class App extends Component{
 							</div>
 						</div>
 					</div>
+					<ul>
+						{this.state.items.map(function (item) {
+							return React.createElement(
+								"li", 
+								{ 
+									key: item.id 
+								}, 
+								item.body);
+  						})}
+					</ul>
 					<Footer />
 				</section>
 			</div>

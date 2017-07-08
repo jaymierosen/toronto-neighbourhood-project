@@ -7,7 +7,7 @@ export default class Map extends React.Component {
 	render(){
 		return(
 			<div>
-				<div className="box">THIS IS A MAP</div>
+				<div className="box" onClick={this.handledisplayData.bind(this)}>THIS IS A MAP</div>
 			</div>
 		);
 	}
